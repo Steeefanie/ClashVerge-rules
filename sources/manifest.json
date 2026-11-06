@@ -1,0 +1,156 @@
+{
+  "_comment": "规则集清单。rulesets 的数组顺序即主配置中的匹配顺序（对应 QX 主配置 [filter_remote] 加载顺序）。修改后运行 python tools/build.py。",
+  "publish": {
+    "base_url": "https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main",
+    "provider_path_prefix": "./ruleset/clashverge-rules"
+  },
+  "upstream": {
+    "repo": "https://github.com/Steeefanie/QuantumultX-resources",
+    "config": "examples/quantumult_steeefanie.conf",
+    "extra_files": [
+      "LICENSE",
+      "examples/quantumult_steeefanie.conf",
+      "sources/v2fly/LICENSE"
+    ]
+  },
+  "regions": [
+    {
+      "name": "Hong Kong",
+      "filter": "(?i)^(?!.*(?:流量|到期|剩余|重置|套餐|公告|traffic|expire|reset|quota|balance|(?<![a-z])beta(?![a-z]))).*(?:香港|hong[ _-]?kong|🇭🇰|(?<![a-z])hk(?![a-z])).*$"
+    },
+    {
+      "name": "Taiwan",
+      "filter": "(?i)^(?!.*(?:流量|到期|剩余|重置|套餐|公告|traffic|expire|reset|quota|balance|(?<![a-z])beta(?![a-z]))).*(?:台湾|台灣|台北|臺北|台中|新北|高雄|彰化|hinet|cht|taiwan|taipei|🇹🇼|(?<![a-z])tw(?![a-z])).*$"
+    },
+    {
+      "name": "Japan",
+      "filter": "(?i)^(?!.*(?:流量|到期|剩余|重置|套餐|公告|traffic|expire|reset|quota|balance|(?<![a-z])beta(?![a-z]))).*(?:日本|东京|東京|大阪|japan|tokyo|osaka|🇯🇵|(?<![a-z])jp(?![a-z])).*$"
+    },
+    {
+      "name": "Singapore",
+      "filter": "(?i)^(?!.*(?:流量|到期|剩余|重置|套餐|公告|traffic|expire|reset|quota|balance|(?<![a-z])beta(?![a-z]))).*(?:新加坡|狮城|獅城|singapore|🇸🇬|(?<![a-z])sg(?![a-z])).*$"
+    },
+    {
+      "name": "United States",
+      "filter": "(?i)^(?!.*(?:流量|到期|剩余|重置|套餐|公告|traffic|expire|reset|quota|balance|(?<![a-z])beta(?![a-z]))).*(?:美国|美國|洛杉矶|洛杉磯|圣何塞|聖荷西|西雅图|西雅圖|纽约|紐約|united[ _-]?states|american?|los[ _-]?angeles|san[ _-]?jose|seattle|new[ _-]?york|🇺🇸|(?<![a-z])us(?![a-z])).*$"
+    }
+  ],
+  "groups": [
+    {"name": "广告拦截", "default": "REJECT", "choices": ["REJECT", "DIRECT"]},
+    {"name": "OpenAI", "default": "United States"},
+    {"name": "Anthropic", "default": "United States"},
+    {"name": "Gemini", "default": "United States"},
+    {"name": "YouTube", "default": "Global"},
+    {"name": "Google", "default": "Global"},
+    {"name": "OneDrive-Web", "default": "Hong Kong"},
+    {"name": "OneDrive-Sync", "default": "DIRECT"},
+    {"name": "GitHub", "default": "Global"},
+    {"name": "Microsoft", "default": "Global"},
+    {"name": "Spotify", "default": "United States"},
+    {"name": "TikTok", "default": "Singapore"},
+    {"name": "Netflix", "default": "Singapore"},
+    {"name": "Disney", "default": "Singapore"},
+    {"name": "Steam", "default": "Hong Kong"},
+    {"name": "Telegram", "default": "Global"},
+    {"name": "X", "default": "Global"},
+    {"name": "Meta", "default": "Global"},
+    {"name": "Wiki", "default": "Global"},
+    {"name": "LinkedIn", "default": "Global"},
+    {"name": "国内服务", "default": "DIRECT"},
+    {"name": "Apple", "default": "DIRECT"}
+  ],
+  "local_rules": {
+    "_comment": "对应 QX [filter_local]。domain 段放在所有规则集之前，ip 段放在所有 IP 规则集之前。",
+    "domain": [
+      ["DOMAIN", "ad.12306.cn", "DIRECT"],
+      ["DOMAIN", "gg.caixin.com", "DIRECT"],
+      ["DOMAIN", "sdkapp.uve.weibo.com", "DIRECT"],
+      ["DOMAIN-SUFFIX", "githubusercontent.com", "Global"],
+      ["DOMAIN-SUFFIX", "github.com", "Global"]
+    ],
+    "ip": [
+      ["IP-CIDR", "180.76.76.200/32", "REJECT"],
+      ["IP-CIDR", "203.107.1.1/24", "REJECT"],
+      ["IP-CIDR", "10.0.0.0/8", "DIRECT"],
+      ["IP-CIDR", "127.0.0.0/8", "DIRECT"],
+      ["IP-CIDR", "169.254.0.0/16", "DIRECT"],
+      ["IP-CIDR", "172.16.0.0/12", "DIRECT"],
+      ["IP-CIDR", "192.168.0.0/16", "DIRECT"],
+      ["IP-CIDR", "224.0.0.0/24", "DIRECT"],
+      ["IP-CIDR", "182.254.116.0/24", "DIRECT"],
+      ["IP-CIDR6", "::1/128", "DIRECT"],
+      ["IP-CIDR6", "fc00::/7", "DIRECT"],
+      ["IP-CIDR6", "fe80::/10", "DIRECT"]
+    ],
+    "final": [
+      ["GEOIP", "CN", "DIRECT"],
+      ["MATCH", "", "Global"]
+    ]
+  },
+  "rulesets": [
+    {"name": "adblock-rewrite", "src": "filter/adblock/combined.list", "dir": "collections", "policy": "广告拦截", "license": "MIT (app2smile/rules) + GPL-3.0 (fmz200/wool_scripts)", "publish": false, "note": "许可混合，待单独评估后发布"},
+    {"name": "advertising", "src": "filter/collections/advertising.list", "dir": "collections", "policy": "广告拦截"},
+    {"name": "openai", "src": "filter/services/openai.list", "dir": "services", "policy": "OpenAI"},
+    {"name": "anthropic", "src": "filter/services/anthropic.list", "dir": "services", "policy": "Anthropic"},
+    {"name": "google-gemini", "src": "filter/services/google-gemini.list", "dir": "services", "policy": "Gemini", "license": "MIT (v2fly/domain-list-community) + 上游本地补充 (sources/local-additions.json)"},
+    {"name": "google-youtube", "src": "filter/services/google-youtube.list", "dir": "services", "policy": "YouTube"},
+    {"name": "google-without-youtube", "src": "filter/collections/google-without-youtube.list", "dir": "collections", "policy": "Google"},
+    {"name": "microsoft-onedrive-web", "src": "filter/custom/microsoft-onedrive-web.list", "dir": "custom", "policy": "OneDrive-Web", "license": "上游仓库自维护（MIT）"},
+    {"name": "microsoft-onedrive-sync", "src": "filter/custom/microsoft-onedrive-sync.list", "dir": "custom", "policy": "OneDrive-Sync", "license": "上游仓库自维护（MIT）"},
+    {"name": "microsoft-github", "src": "filter/services/microsoft-github.list", "dir": "services", "policy": "GitHub"},
+    {"name": "microsoft", "src": "filter/services/microsoft.list", "dir": "services", "policy": "Microsoft"},
+    {"name": "spotify", "src": "filter/services/spotify.list", "dir": "services", "policy": "Spotify"},
+    {"name": "bytedance-tiktok", "src": "filter/services/bytedance-tiktok.list", "dir": "services", "policy": "TikTok"},
+    {"name": "netflix", "src": "filter/services/netflix.list", "dir": "services", "policy": "Netflix"},
+    {"name": "disney", "src": "filter/services/disney.list", "dir": "services", "policy": "Disney"},
+    {"name": "steam", "src": "filter/services/steam.list", "dir": "services", "policy": "Steam"},
+    {"name": "telegram", "src": "filter/services/telegram.list", "dir": "services", "policy": "Telegram"},
+    {"name": "twitter", "src": "filter/services/twitter.list", "dir": "services", "policy": "X"},
+    {"name": "meta", "src": "filter/services/meta.list", "dir": "services", "policy": "Meta"},
+    {"name": "wikimedia", "src": "filter/services/wikimedia.list", "dir": "services", "policy": "Wiki"},
+    {"name": "linkedin", "src": "filter/services/linkedin.list", "dir": "services", "policy": "LinkedIn"},
+    {"name": "bilibili", "src": "filter/services/bilibili.list", "dir": "services", "policy": "国内服务"},
+    {"name": "xiaohongshu", "src": "filter/services/xiaohongshu.list", "dir": "services", "policy": "国内服务"},
+    {"name": "deepseek", "src": "filter/services/deepseek.list", "dir": "services", "policy": "国内服务"},
+    {"name": "tencent", "src": "filter/services/tencent.list", "dir": "services", "policy": "国内服务"},
+    {"name": "apple", "src": "filter/services/apple.list", "dir": "services", "policy": "Apple"},
+    {"name": "domestic", "src": "filter/collections/domestic.list", "dir": "collections", "policy": "DIRECT"},
+    {"name": "global", "src": "filter/collections/global.list", "dir": "collections", "policy": "Global"}
+  ],
+  "default_license": "MIT (v2fly/domain-list-community)",
+  "qx_match_model": "order",
+  "_qx_match_model": "order：按资源顺序先到先得（默认，与原配置注释一致）；type：host > host-suffix > host-keyword 类型优先，会生成 rules/overrides/*_priority.yaml。两者都未在 QX 中实测，验证方法见 README「匹配模型」。",
+  "acceptance": [
+    ["www.youtube.com", "YouTube"],
+    ["rr1---sn-abc.googlevideo.com", "YouTube"],
+    ["www.google.com", "Google"],
+    ["mail.google.com", "Google"],
+    ["gemini.google.com", "Gemini"],
+    ["onedrive.com", "OneDrive-Web"],
+    ["onedrive.live.com", "OneDrive-Web"],
+    ["login.live.com", "OneDrive-Web"],
+    ["api.onedrive.com", "OneDrive-Sync"],
+    ["contoso-my.sharepoint.com", "OneDrive-Sync"],
+    ["www.microsoft.com", "Microsoft"],
+    ["chatgpt.com", "OpenAI"],
+    ["api.openai.com", "OpenAI"],
+    ["claude.ai", "Anthropic"],
+    ["www.xiaohongshu.com", "国内服务"],
+    ["www.bilibili.com", "国内服务"],
+    ["www.baidu.com", "DIRECT"],
+    ["github.com", "Global"],
+    ["copilot-proxy.githubusercontent.com", {"order": "Global", "type": "GitHub"}],
+    ["adservice.google.com", {"order": "广告拦截", "type": "Google"}],
+    ["doubleclick.com", "广告拦截"],
+    ["www.wikipedia.org", "Wiki"],
+    ["www.reddit.com", "Global"]
+  ],
+  "_runtime_cases": "仅用于 --verify：经真实 Mihomo 内核检查 IP / GeoIP / MATCH 层。rule 为 Mihomo 日志中的规则标识；hosts 为域名用例的本地解析结果。",
+  "runtime_cases": [
+    {"target": "192.168.1.1", "policy": "DIRECT", "rule": "IPCIDR/192.168.0.0/16"},
+    {"target": "223.5.5.5", "policy": "DIRECT", "rule": "GeoIP/cn"},
+    {"target": "35.186.224.47", "policy": "Spotify", "rule": "RuleSet/spotify_ip"},
+    {"target": "8.8.8.8", "policy": "Global", "rule": "Match/"},
+    {"target": "cvr-unlisted.example", "policy": "Global", "rule": "Match/", "hosts": "8.8.4.4"}
+  ]
+}

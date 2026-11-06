@@ -1,0 +1,9 @@
+# 名称：deepseek（behavior: domain）
+# 来源：Steeefanie/QuantumultX-resources@33b22e9fc24f filter/services/deepseek.list
+# 来源 SHA256：0c2e38388bc6455b389b6015ca49b9a4c8248e188b07f42b5ad8cd353520e794
+# 许可：MIT (v2fly/domain-list-community)
+# 条目：2
+# 由 tools/build.py 生成，请勿手改
+payload:
+  - '+.deepseek.com'
+  - '+.deepseeksvc.com'

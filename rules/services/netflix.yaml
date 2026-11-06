@@ -1,0 +1,31 @@
+# 名称：netflix（behavior: domain）
+# 来源：Steeefanie/QuantumultX-resources@33b22e9fc24f filter/services/netflix.list
+# 来源 SHA256：ff96fed2bb6dd2c0deeff7bfd4a97a1caca597a7ef45337bf290cc7ec3e771de
+# 许可：MIT (v2fly/domain-list-community)
+# 条目：24
+# 由 tools/build.py 生成，请勿手改
+payload:
+  - '+.fast.com'
+  - '+.netflix.ca'
+  - '+.netflix.com'
+  - '+.netflix.com.edgesuite.net'
+  - '+.netflix.net'
+  - '+.netflixdnstest0.com'
+  - '+.netflixdnstest1.com'
+  - '+.netflixdnstest10.com'
+  - '+.netflixdnstest2.com'
+  - '+.netflixdnstest3.com'
+  - '+.netflixdnstest4.com'
+  - '+.netflixdnstest5.com'
+  - '+.netflixdnstest6.com'
+  - '+.netflixdnstest7.com'
+  - '+.netflixdnstest8.com'
+  - '+.netflixdnstest9.com'
+  - '+.netflixinvestor.com'
+  - '+.netflixtechblog.com'
+  - '+.nflxext.com'
+  - '+.nflximg.com'
+  - '+.nflximg.net'
+  - '+.nflxsearch.net'
+  - '+.nflxso.net'
+  - '+.nflxvideo.net'

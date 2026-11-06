@@ -1,0 +1,8 @@
+# 名称：spotify_keyword（behavior: classical）
+# 来源：Steeefanie/QuantumultX-resources@33b22e9fc24f filter/services/spotify.list
+# 来源 SHA256：b9c5cae5913b24928905d84d429afe6190180ef4121e5c2f7ea264d9e9694a59
+# 许可：MIT (v2fly/domain-list-community)
+# 条目：1
+# 由 tools/build.py 生成，请勿手改
+payload:
+  - 'DOMAIN-KEYWORD,spotify'

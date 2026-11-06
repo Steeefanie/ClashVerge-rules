@@ -1,0 +1,10 @@
+# 生成文件与工具固定 LF，Windows / macOS / Linux 离线重建结果一致
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+
+# 上游快照按字节保存，保证与 sources/upstream.lock.json 中的哈希一致
+sources/qx/** -text

@@ -1,0 +1,18 @@
+# 名称：microsoft-onedrive-web（behavior: domain）
+# 来源：Steeefanie/QuantumultX-resources@33b22e9fc24f filter/custom/microsoft-onedrive-web.list
+# 来源 SHA256：177d3cd8ba510eeead65aa5ab6c1c2c63657cb683367aa108123ddbce589f9ff
+# 许可：上游仓库自维护（MIT）
+# 条目：11
+# 由 tools/build.py 生成，请勿手改
+payload:
+  - 'account.live.com'
+  - 'g.live.com'
+  - 'login.live.com'
+  - 'login.microsoftonline.com'
+  - 'login.windows.net'
+  - 'oauth.live.com'
+  - '+.officeapps.live.com'
+  - 'onedrive.com'
+  - 'onedrive.live.com'
+  - 'onedrive.office365.com'
+  - 'www.onedrive.com'

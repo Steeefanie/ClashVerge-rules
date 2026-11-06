@@ -1,0 +1,19 @@
+# 名称：linkedin（behavior: domain）
+# 来源：Steeefanie/QuantumultX-resources@33b22e9fc24f filter/services/linkedin.list
+# 来源 SHA256：adcc305c4f96b31e3dafe5423ff96c1a34b1a54cccb29b5a1c4e682c40897242
+# 许可：MIT (v2fly/domain-list-community)
+# 条目：12
+# 由 tools/build.py 生成，请勿手改
+payload:
+  - '+.bizographics.com'
+  - 'e122475.dscg.akamaiedge.net'
+  - '+.l-0005.dc-msedge.net'
+  - '+.l-0005.l-msedge.net'
+  - '+.licdn.cn'
+  - 'licdn.cn.cdn20.com'
+  - '+.licdn.com'
+  - '+.linkedin.at'
+  - '+.linkedin.cn'
+  - '+.linkedin.com'
+  - 'linkedin.sc.omtrdc.net'
+  - '+.lnkd.in'

@@ -1,0 +1,55 @@
+# 名称：bytedance-tiktok；原始分类：tiktok
+# 本地整理日期：2026-11-04（北京时间；非上游更新时间，离线重建不自动刷新）
+# 公司/组织：按上游 ByteDance（字节跳动） 规则归组；具体运营主体未逐项核实
+# 服务说明：TikTok 短视频与相关内容服务；账号和地区限制不由规则本身解决。
+# 说明状态：服务用途说明；运营主体未单独核实
+# 说明依据：https://github.com/v2fly/domain-list-community/tree/dd0d168c3b0dde4c92320f7857f5b2970f616361/data/tiktok
+# 规则分组：bytedance；分组依据上游无条件 include，不代表股权或运营主体关系。
+# 上游直接引用：无直接 include 子分类
+# 覆盖：39 条域名条件；示例：p16-tiktok-dm-sticker-sign-sg.ibyteimg.com、p16-tiktokcdn-com.akamaized.net、roovza-launches.appsflyersdk.com。不承诺覆盖该服务的全部连接。
+# 来源：https://github.com/v2fly/domain-list-community/tree/dd0d168c3b0dde4c92320f7857f5b2970f616361/data/tiktok
+# 本地补充：0 个明确主机名；核对日期和官方依据见 sources/local-additions.json；上游快照未修改。
+# 原作者：V2Fly / V2Ray 社区贡献者；上游许可：MIT
+# 本项目角色：收集、整理、格式转换和校验；原始域名数据贡献归上游作者与社区。
+# 本地修改：展开引用、去重、分离广告属性；共享根域名按原始分类保留或隔离。
+# 默认策略：proxy；请用 force-policy 指定实际去向，文件名前缀不决定匹配顺序。
+# 状态：静态校验通过不代表真实设备业务验证通过。
+host, p16-tiktok-dm-sticker-sign-sg.ibyteimg.com, proxy
+host, p16-tiktokcdn-com.akamaized.net, proxy
+host, roovza-launches.appsflyersdk.com, proxy
+host, roovza.inapps.appsflyersdk.com, proxy
+host, roovza.launches.appsflyersdk.com, proxy
+host, roovza.skadsdk.appsflyersdk.com, proxy
+host-suffix, bytedapm.com, proxy
+host-suffix, muscdn.com, proxy
+host-suffix, musical.ly, proxy
+host-suffix, tik-tokapi.com, proxy
+host-suffix, tiktok-minis.com, proxy
+host-suffix, tiktok-row.net, proxy
+host-suffix, tiktok.com, proxy
+host-suffix, tiktokcdn-eu.com, proxy
+host-suffix, tiktokcdn-us.com, proxy
+host-suffix, tiktokcdn-us.com.edgesuite.net, proxy
+host-suffix, tiktokcdn.com, proxy
+host-suffix, tiktokcdn.com.akamaized.net, proxy
+host-suffix, tiktokcdn.com.edgesuite.net, proxy
+host-suffix, tiktokd.net, proxy
+host-suffix, tiktokd.org, proxy
+host-suffix, tiktokeu-cdn.com, proxy
+host-suffix, tiktokglobalshopv.com, proxy
+host-suffix, tiktokminis.us, proxy
+host-suffix, tiktokrow-cdn.com, proxy
+host-suffix, tiktokshop.com, proxy
+host-suffix, tiktokstaticb.com, proxy
+host-suffix, tiktokv.com, proxy
+host-suffix, tiktokv.com.edgekey.net, proxy
+host-suffix, tiktokv.com.edgesuite.net, proxy
+host-suffix, tiktokv.eu, proxy
+host-suffix, tiktokv.us, proxy
+host-suffix, tiktokvapp.com, proxy
+host-suffix, tiktokw.eu, proxy
+host-suffix, tiktokw.us, proxy
+host-suffix, ttcdn-us.com, proxy
+host-suffix, ttlivecdn.com, proxy
+host-suffix, ttoverseaus.net, proxy
+host-suffix, ttwstatic.com, proxy

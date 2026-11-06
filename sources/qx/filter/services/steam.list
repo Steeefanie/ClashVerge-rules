@@ -1,0 +1,77 @@
+# 名称：steam；原始分类：steam
+# 本地整理日期：2026-11-04（北京时间；非上游更新时间，离线重建不自动刷新）
+# 公司/组织：Valve / Steam
+# 服务说明：Steam 游戏商店、社区、客户端和下载相关服务；游戏内流量与地区下载需求需另行判断。
+# 说明状态：人工登记，依据所列官方页面；不等同于对全部域名的归属核验
+# 说明依据：https://store.steampowered.com/about/
+# 规则分组：无已确认的命名前缀父组；分组依据上游无条件 include，不代表股权或运营主体关系。
+# 上游直接引用：无直接 include 子分类
+# 覆盖：61 条域名条件；示例：a4e8s8k3.map2.ssl.hwcdn.net、alibaba.cdn.steampipe.steamcontent.com、f3b7q2p3.ssl.hwcdn.net。不承诺覆盖该服务的全部连接。
+# 来源：https://github.com/v2fly/domain-list-community/tree/dd0d168c3b0dde4c92320f7857f5b2970f616361/data/steam
+# 本地补充：0 个明确主机名；核对日期和官方依据见 sources/local-additions.json；上游快照未修改。
+# 原作者：V2Fly / V2Ray 社区贡献者；上游许可：MIT
+# 本项目角色：收集、整理、格式转换和校验；原始域名数据贡献归上游作者与社区。
+# 本地修改：展开引用、去重、分离广告属性；共享根域名按原始分类保留或隔离。
+# 默认策略：proxy；请用 force-policy 指定实际去向，文件名前缀不决定匹配顺序。
+# 状态：静态校验通过不代表真实设备业务验证通过。
+host, a4e8s8k3.map2.ssl.hwcdn.net, proxy
+host, alibaba.cdn.steampipe.steamcontent.com, proxy
+host, f3b7q2p3.ssl.hwcdn.net, proxy
+host, lv.queniujq.cn, proxy
+host, steambroadcast.akamaized.net, proxy
+host, steamcdn-a.akamaihd.net, proxy
+host, steamcloudsweden.blob.core.windows.net, proxy
+host, steamcommunity-a.akamaihd.net, proxy
+host, steamcommunity-a.akamaihd.net.edgesuite.net, proxy
+host, steammobile.akamaized.net, proxy
+host, steampipe-kr.akamaized.net, proxy
+host, steampipe-partner.akamaized.net, proxy
+host, steampipe.akamaized.net, proxy
+host, steamstore-a.akamaihd.net, proxy
+host, steamugcquincy.blob.core.windows.net, proxy
+host, steamusercontent-a.akamaihd.net, proxy
+host, steamuserimages-a.akamaihd.net, proxy
+host, steamvideo-a.akamaihd.net, proxy
+host, xz.pphimalayanrt.com, proxy
+host-suffix, client-update.queniuqe.com, proxy
+host-suffix, csgo.com.cn, proxy
+host-suffix, csgo.wmsj.cn, proxy
+host-suffix, dl.steam.clngaa.com, proxy
+host-suffix, dota2.com, proxy
+host-suffix, dota2.com.cn, proxy
+host-suffix, dota2.wmsj.cn, proxy
+host-suffix, edge.steam-dns.top.comcast.net, proxy
+host-suffix, gstore.val.manlaxy.com, proxy
+host-suffix, playartifact.com, proxy
+host-suffix, s.team, proxy
+host-suffix, st.dl.bscstorage.net, proxy
+host-suffix, st.dl.eccdnx.com, proxy
+host-suffix, st.dl.pinyuncloud.com, proxy
+host-suffix, steam-api.com, proxy
+host-suffix, steam-chat.com, proxy
+host-suffix, steam.apac.qtlglb.com, proxy
+host-suffix, steam.cdn.on.net, proxy
+host-suffix, steam.cdn.orcon.net.nz, proxy
+host-suffix, steam.cdn.slingshot.co.nz, proxy
+host-suffix, steam.cdn.webra.ru, proxy
+host-suffix, steam.eca.qtlglb.com, proxy
+host-suffix, steam.naeu.qtlglb.com, proxy
+host-suffix, steam.ru.qtlglb.com, proxy
+host-suffix, steam.tv, proxy
+host-suffix, steamchina.com, proxy
+host-suffix, steamcommunity.com, proxy
+host-suffix, steamconnecttest.com, proxy
+host-suffix, steamcontent.com, proxy
+host-suffix, steamdeck.com, proxy
+host-suffix, steamgames.com, proxy
+host-suffix, steamos.cloud, proxy
+host-suffix, steampowered.com, proxy
+host-suffix, steampowered.com.8686c.com, proxy
+host-suffix, steamserver.net, proxy
+host-suffix, steamstatic.com, proxy
+host-suffix, steamstatic.com.8686c.com, proxy
+host-suffix, steamusercontent.com, proxy
+host-suffix, underlords.com, proxy
+host-suffix, valve.net, proxy
+host-suffix, valvesoftware.com, proxy
+host-suffix, wmsjsteam.com, proxy

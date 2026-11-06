@@ -1,0 +1,19 @@
+# 名称：xiaohongshu（behavior: domain）
+# 来源：Steeefanie/QuantumultX-resources@33b22e9fc24f filter/services/xiaohongshu.list
+# 来源 SHA256：87422715b151d75254c4fd3a41f8bc6a0240bdd8c33ed836272346db6fe72ae3
+# 许可：MIT (v2fly/domain-list-community)
+# 条目：12
+# 由 tools/build.py 生成，请勿手改
+payload:
+  - '+.askdiandian.com'
+  - '+.diandianlife.top'
+  - '+.redelight.cn'
+  - '+.rednote.com'
+  - '+.rednote.com.my'
+  - '+.rednotecdn.com'
+  - '+.rnote.com'
+  - '+.xhscdn.com'
+  - '+.xhscdn.net'
+  - '+.xhslink.com'
+  - '+.xhsrcdn.com'
+  - '+.xiaohongshu.com'

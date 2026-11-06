@@ -1,0 +1,31 @@
+# 名称：microsoft-onedrive-sync（behavior: domain）
+# 来源：Steeefanie/QuantumultX-resources@33b22e9fc24f filter/custom/microsoft-onedrive-sync.list
+# 来源 SHA256：2f33d8c527f6f499b1c3e920f07bee41eb0cfa22e3b21c5eddda83c331ca94c9
+# 许可：上游仓库自维护（MIT）
+# 条目：24
+# 由 tools/build.py 生成，请勿手改
+payload:
+  - 'api.live.net'
+  - 'apis.live.net'
+  - '+.docs.live.net'
+  - 'favorites.live.com'
+  - '+.files.1drv.com'
+  - '+.groups.office.live.com'
+  - '+.groups.photos.live.com'
+  - '+.groups.skydrive.live.com'
+  - '+.livefilestore.com'
+  - 'oneclient.sfx.ms'
+  - '+.onedrive.com'
+  - '+.onedrive.live.com'
+  - 'p.sfx.ms'
+  - 'photos.live.com'
+  - '+.policies.live.net'
+  - 'settings.live.net'
+  - '+.sharepoint.com'
+  - '+.sharepointonline.com'
+  - 'skyapi.live.net'
+  - 'skydrive.live.com'
+  - 'snapi.live.net'
+  - 'spoprod-a.akamaihd.net'
+  - '+.storage.live.com'
+  - '+.storage.msn.com'

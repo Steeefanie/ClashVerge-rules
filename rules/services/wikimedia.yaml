@@ -1,0 +1,25 @@
+# 名称：wikimedia（behavior: domain）
+# 来源：Steeefanie/QuantumultX-resources@33b22e9fc24f filter/services/wikimedia.list
+# 来源 SHA256：5de75dbb51d0a0370e9a98914bf8203f6c44fd510bd299b3d382dde07384914a
+# 许可：MIT (v2fly/domain-list-community)
+# 条目：18
+# 由 tools/build.py 生成，请勿手改
+payload:
+  - '+.mediawiki.org'
+  - '+.toolforge.org'
+  - '+.w.wiki'
+  - '+.wikibooks.org'
+  - '+.wikidata.org'
+  - '+.wikimedia.org'
+  - '+.wikimediacloud.org'
+  - '+.wikimediafoundation.org'
+  - '+.wikinews.org'
+  - '+.wikipedia.org'
+  - '+.wikiquote.org'
+  - '+.wikisource.org'
+  - '+.wikiversity.org'
+  - '+.wikivoyage.org'
+  - '+.wiktionary.org'
+  - '+.wmcloud.org'
+  - '+.wmflabs.org'
+  - '+.wmfusercontent.org'

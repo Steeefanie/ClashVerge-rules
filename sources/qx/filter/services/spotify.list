@@ -1,0 +1,58 @@
+# 名称：spotify；原始分类：spotify
+# 本地整理日期：2026-11-04（北京时间；非上游更新时间，离线重建不自动刷新）
+# 公司/组织：Spotify
+# 服务说明：Spotify 音乐、播客及相关内容播放服务。
+# 说明状态：人工登记，依据所列官方页面；不等同于对全部域名的归属核验
+# 说明依据：https://www.spotify.com/us/about-us/contact/
+# 规则分组：无已确认的命名前缀父组；分组依据上游无条件 include，不代表股权或运营主体关系。
+# 上游直接引用：无直接 include 子分类
+# 覆盖：42 条域名条件；示例：audio-ak-spotify-com.akamaized.net、audio-akp-bbr-spotify-com.akamaized.net、audio-akp-quic-spotify-com.akamaized.net。不承诺覆盖该服务的全部连接。
+# 来源：https://github.com/v2fly/domain-list-community/tree/dd0d168c3b0dde4c92320f7857f5b2970f616361/data/spotify
+# 本地补充：17 个明确主机名；核对日期和官方依据见 sources/local-additions.json；上游快照未修改。
+# 原作者：V2Fly / V2Ray 社区贡献者；上游许可：MIT
+# 本项目角色：收集、整理、格式转换和校验；原始域名数据贡献归上游作者与社区。
+# 本地修改：展开引用、去重、分离广告属性；共享根域名按原始分类保留或隔离。
+# 默认策略：proxy；请用 force-policy 指定实际去向，文件名前缀不决定匹配顺序。
+# 状态：静态校验通过不代表真实设备业务验证通过。
+host, audio-ak-spotify-com.akamaized.net, proxy
+host, audio-akp-bbr-spotify-com.akamaized.net, proxy
+host, audio-akp-quic-spotify-com.akamaized.net, proxy
+host, audio-akp-spotify-com.akamaized.net, proxy
+host, audio4-ak-spotify-com.akamaized.net, proxy
+host, audio4-akp-spotify-com.akamaized.net, proxy
+host, cdn-spotify-experiments.conductrics.com, proxy
+host, heads-ak-spotify-com.akamaized.net, proxy
+host, heads-akp-spotify-com.akamaized.net, proxy
+host, heads4-ak-spotify-com.akamaized.net, proxy
+host, heads4-akp-spotify-com.akamaized.net, proxy
+host, spotify.com.edgesuite.net, proxy
+host, spotify.map.fastly.net, proxy
+host, spotify.map.fastlylb.net, proxy
+host-keyword, spotify, proxy
+host-suffix, audio-ak-spotify-com.akamaized.net, proxy
+host-suffix, byspotify.com, proxy
+host-suffix, heads4-ak-spotify-com.akamaized.net, proxy
+host-suffix, lifeatspotify.com, proxy
+host-suffix, pscdn.co, proxy
+host-suffix, scdn.co, proxy
+host-suffix, spoti.fi, proxy
+host-suffix, spotify-com.akamaized.net, proxy
+host-suffix, spotify-everywhere.com, proxy
+host-suffix, spotify.app.link, proxy
+host-suffix, spotify.com, proxy
+host-suffix, spotify.com.edgesuite.net, proxy
+host-suffix, spotify.design, proxy
+host-suffix, spotify.link, proxy
+host-suffix, spotifycdn.com, proxy
+host-suffix, spotifycdn.net, proxy
+host-suffix, spotifycharts.com, proxy
+host-suffix, spotifycodes.com, proxy
+host-suffix, spotifyforbrands.com, proxy
+host-suffix, spotifyforvendors.com, proxy
+host-suffix, spotifyjobs.com, proxy
+host-suffix, spotifynewsroom.jp, proxy
+host-suffix, spotilocal.com, proxy
+host-suffix, tospotify.com, proxy
+ip-cidr, 104.154.127.126/32, proxy
+ip-cidr, 35.186.224.47/32, proxy
+user-agent, Spotify*, proxy

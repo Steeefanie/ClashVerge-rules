@@ -1,0 +1,28 @@
+# 名称：telegram（behavior: domain）
+# 来源：Steeefanie/QuantumultX-resources@33b22e9fc24f filter/services/telegram.list
+# 来源 SHA256：3153a5f5424e9421ec97fa7a480241cdad60f553ab80afbc043c8f40c12983aa
+# 许可：MIT (v2fly/domain-list-community)
+# 条目：21
+# 由 tools/build.py 生成，请勿手改
+payload:
+  - '+.cdn-telegram.org'
+  - '+.comments.app'
+  - '+.contest.com'
+  - '+.fragment.com'
+  - '+.graph.org'
+  - '+.quiz.directory'
+  - '+.t.me'
+  - '+.tdesktop.com'
+  - '+.telega.one'
+  - '+.telegra.ph'
+  - '+.telegram-cdn.org'
+  - '+.telegram.dog'
+  - '+.telegram.me'
+  - '+.telegram.org'
+  - '+.telegram.space'
+  - '+.telesco.pe'
+  - '+.tg.dev'
+  - '+.ton.org'
+  - '+.toncenter.com'
+  - '+.tx.me'
+  - '+.usercontent.dev'

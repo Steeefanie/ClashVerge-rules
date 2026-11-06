@@ -1,0 +1,79 @@
+# 名称：google-gemini；原始分类：google-gemini
+# 本地整理日期：2026-11-04（北京时间；非上游更新时间，离线重建不自动刷新）
+# 公司/组织：运营主体未核实，不根据分类名推断公司归属
+# 服务说明：Google 的 Gemini、DeepMind 与 Antigravity 相关域名；包含官方网络清单补充的明确 AI 接口，部分为 Google Cloud 共享端点。上游 Gemini 分类为兼容引用，不保证覆盖所有调用。
+# 说明状态：服务用途说明；运营主体未单独核实
+# 说明依据：https://antigravity.google/docs/enterprise/#network-allowlists-and-mtls-endpoints
+# 规则分组：无已确认的命名前缀父组；分组依据上游无条件 include，不代表股权或运营主体关系。
+# 上游直接引用：google-deepmind
+# 覆盖：63 条域名条件；示例：ai.google.dev、aiplatform.eu.rep.googleapis.com、aiplatform.googleapis.com。不承诺覆盖该服务的全部连接。
+# 来源：https://github.com/v2fly/domain-list-community/tree/dd0d168c3b0dde4c92320f7857f5b2970f616361/data/google-gemini
+# 本地补充：14 个明确主机名；核对日期和官方依据见 sources/local-additions.json；上游快照未修改。
+# 原作者：V2Fly / V2Ray 社区贡献者；上游许可：MIT
+# 本项目角色：收集、整理、格式转换和校验；原始域名数据贡献归上游作者与社区。
+# 本地修改：展开引用、去重、分离广告属性；共享根域名按原始分类保留或隔离。
+# 默认策略：proxy；请用 force-policy 指定实际去向，文件名前缀不决定匹配顺序。
+# 状态：静态校验通过不代表真实设备业务验证通过。
+host, ai.google.dev, proxy
+host, aiplatform.eu.rep.googleapis.com, proxy
+host, aiplatform.googleapis.com, proxy
+host, aiplatform.mtls.googleapis.com, proxy
+host, aiplatform.us.rep.googleapis.com, proxy
+host, alkalicore-pa.clients6.google.com, proxy
+host, alkalimakersuite-pa.clients6.google.com, proxy
+host, antigravity-pa.googleapis.com, proxy
+host, antigravity.googleapis.com, proxy
+host, appsgenaiserver-pa.clients.google.com, proxy
+host, appsgenaiserver-pa.clients6.google.com, proxy
+host, appsgenaiserver-pa.googleapis.com, proxy
+host, businessaicode.eu.rep.googleapis.com, proxy
+host, businessaicode.googleapis.com, proxy
+host, businessaicode.mtls.googleapis.com, proxy
+host, businessaicode.us.rep.googleapis.com, proxy
+host, cloudaicompanion.googleapis.com, proxy
+host, cloudcode-pa.googleapis.com, proxy
+host, daily-cloudcode-pa.googleapis.com, proxy
+host, discoveryengine.googleapis.com, proxy
+host, discoveryengine.mtls.googleapis.com, proxy
+host, eu-discoveryengine.googleapis.com, proxy
+host, eu-discoveryengine.mtls.googleapis.com, proxy
+host, geminiweb-pa.clients.google.com, proxy
+host, geminiweb-pa.clients6.google.com, proxy
+host, notebooklm-pa.googleapis.com, proxy
+host, notebooklm.googleapis.com, proxy
+host, us-discoveryengine.googleapis.com, proxy
+host, us-discoveryengine.mtls.googleapis.com, proxy
+host, webchannel-alkalimakersuite-pa.clients6.google.com, proxy
+host-suffix, ai.studio, proxy
+host-suffix, aicode.googleapis.com, proxy
+host-suffix, aida.googleapis.com, proxy
+host-suffix, aisandbox-pa.googleapis.com, proxy
+host-suffix, aistudio.google.com, proxy
+host-suffix, antigravity-unleash.goog, proxy
+host-suffix, antigravity.google, proxy
+host-suffix, bard.google.com, proxy
+host-suffix, deepmind.com, proxy
+host-suffix, deepmind.google, proxy
+host-suffix, flow.google, proxy
+host-suffix, flow.google.com, proxy
+host-suffix, geller-pa.googleapis.com, proxy
+host-suffix, gemini.google, proxy
+host-suffix, gemini.google.com, proxy
+host-suffix, gemini.gstatic.com, proxy
+host-suffix, generativeai.google, proxy
+host-suffix, generativelanguage.googleapis.com, proxy
+host-suffix, jules.google, proxy
+host-suffix, jules.google.com, proxy
+host-suffix, labs.google, proxy
+host-suffix, labs.google.com, proxy
+host-suffix, labstailwind.pa.googleapis.com, proxy
+host-suffix, makersuite.google.com, proxy
+host-suffix, notebook.google, proxy
+host-suffix, notebook.google.com, proxy
+host-suffix, notebooklm.google, proxy
+host-suffix, notebooklm.google.com, proxy
+host-suffix, opal.google, proxy
+host-suffix, opal.google.com, proxy
+host-suffix, proactivebackend-pa.googleapis.com, proxy
+host-suffix, robinfrontend-pa.googleapis.com, proxy
+host-suffix, stitch.withgoogle.com, proxy

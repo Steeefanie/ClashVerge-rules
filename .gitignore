@@ -1,0 +1,15 @@
+# 含真实订阅 / 节点凭据的本地配置，禁止提交
+RkNcnsvO7HQr.yaml
+local/
+*.local.yaml
+
+# 上游克隆与缓存（快照见 sources/qx/）
+.cache/
+__pycache__/
+*.pyc
+
+# 快照替换过程中的临时文件与备份
+sources/qx.tmp/
+sources/qx.bak/
+sources/upstream.lock.json.tmp
+sources/upstream.lock.json.bak

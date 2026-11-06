@@ -1,0 +1,36 @@
+# 名称：openai；原始分类：openai
+# 本地整理日期：2026-11-04（北京时间；非上游更新时间，离线重建不自动刷新）
+# 公司/组织：OpenAI
+# 服务说明：OpenAI 提供的 ChatGPT、模型 API 及相关资源服务；登录、支付或云平台可能依赖其他共享域名。
+# 说明状态：人工登记，依据所列官方页面；不等同于对全部域名的归属核验
+# 说明依据：https://openai.com/about/
+# 规则分组：无已确认的命名前缀父组；分组依据上游无条件 include，不代表股权或运营主体关系。
+# 上游直接引用：无直接 include 子分类
+# 覆盖：20 条域名条件；示例：openaiapi-site.azureedge.net、openaiassets.blob.core.windows.net、openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net。不承诺覆盖该服务的全部连接。
+# 来源：https://github.com/v2fly/domain-list-community/tree/dd0d168c3b0dde4c92320f7857f5b2970f616361/data/openai
+# 本地补充：0 个明确主机名；核对日期和官方依据见 sources/local-additions.json；上游快照未修改。
+# 原作者：V2Fly / V2Ray 社区贡献者；上游许可：MIT
+# 本项目角色：收集、整理、格式转换和校验；原始域名数据贡献归上游作者与社区。
+# 本地修改：展开引用、去重、分离广告属性；共享根域名按原始分类保留或隔离。
+# 默认策略：proxy；请用 force-policy 指定实际去向，文件名前缀不决定匹配顺序。
+# 状态：静态校验通过不代表真实设备业务验证通过。
+host, openaiapi-site.azureedge.net, proxy
+host, openaiassets.blob.core.windows.net, proxy
+host, openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net, proxy
+host, openaicom.imgix.net, proxy
+host, openaicomproductionae4b.blob.core.windows.net, proxy
+host, production-openaicom-storage.azureedge.net, proxy
+host-suffix, chat.com, proxy
+host-suffix, chatgpt.com, proxy
+host-suffix, chatgpt.livekit.cloud, proxy
+host-suffix, chatgpt.site, proxy
+host-suffix, crixet.com, proxy
+host-suffix, host.livekit.cloud, proxy
+host-suffix, oaistatic.com, proxy
+host-suffix, oaistatsig.com, proxy
+host-suffix, oaiusercontent.com, proxy
+host-suffix, openai.com, proxy
+host-suffix, openai.com.cdn.cloudflare.net, proxy
+host-suffix, openai.org, proxy
+host-suffix, sora.com, proxy
+host-suffix, turn.livekit.cloud, proxy

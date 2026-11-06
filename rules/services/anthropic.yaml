@@ -1,0 +1,26 @@
+# 名称：anthropic（behavior: domain）
+# 来源：Steeefanie/QuantumultX-resources@33b22e9fc24f filter/services/anthropic.list
+# 来源 SHA256：b4c949168a83ddf9f9b2f0bfb75b0083be915a8ec10edc6c57ef77c291647881
+# 许可：MIT (v2fly/domain-list-community)
+# 条目：19
+# 由 tools/build.py 生成，请勿手改
+payload:
+  - '+.ant.dev'
+  - '+.anthropic.com'
+  - '+.anthropic.team'
+  - '+.antspace.dev'
+  - '+.chatbotclaude.com'
+  - '+.clau.de'
+  - '+.claude.ai'
+  - '+.claude.app'
+  - '+.claude.com'
+  - '+.claude.dev'
+  - '+.claude.new'
+  - '+.claude.site'
+  - '+.claudeacademy.com'
+  - '+.claudemcpclient.com'
+  - '+.claudemcpcontent.com'
+  - '+.claudepages.dev'
+  - '+.claudestudio.com'
+  - '+.claudeusercontent.com'
+  - 'servd-anthropic-website.b-cdn.net'

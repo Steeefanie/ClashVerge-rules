@@ -1,0 +1,346 @@
+# ClashVerge-rules 完整配置模板（Mihomo / Clash Verge Rev）
+# 规则来源：https://github.com/Steeefanie/QuantumultX-resources @ 33b22e9fc24f；由 tools/build.py 生成，请勿手改
+# 使用前把 proxy-providers.airport.url 替换为你自己的订阅地址（不要提交真实地址）。
+# 匹配模型：order（见 README「匹配模型」）。地区组没有匹配节点时走 REJECT，不会静默直连。
+mode: rule
+log-level: info
+ipv6: true
+unified-delay: true
+tcp-concurrent: true
+
+dns:
+  enable: true
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter: ['*.lan', '*.local', '*.arpa', 'time.*.com', 'ntp.*.com', '+.market.xiaomi.com', 'localhost.ptlogin2.qq.com', '*.msftncsi.com', 'www.msftconnecttest.com']
+  default-nameserver: [223.5.5.5, 119.29.29.29]
+  nameserver: ['https://dns.alidns.com/dns-query', 'https://doh.pub/dns-query']
+  proxy-server-nameserver: ['https://dns.alidns.com/dns-query', 'https://doh.pub/dns-query']
+
+proxy-providers:
+  airport:
+    type: http
+    url: 'https://example.com/your-subscription-url'  # ← 替换为你的订阅地址
+    path: ./proxy_providers/airport.yaml
+    interval: 86400
+    health-check: {enable: true, url: 'https://www.gstatic.com/generate_204', interval: 600}
+
+proxy-groups:
+  - {name: Global, type: select, proxies: ['Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States', 'DIRECT']}
+  - {name: 'Hong Kong', type: url-test, use: [airport], filter: '(?i)^(?!.*(?:流量|到期|剩余|重置|套餐|公告|traffic|expire|reset|quota|balance|(?<![a-z])beta(?![a-z]))).*(?:香港|hong[ _-]?kong|🇭🇰|(?<![a-z])hk(?![a-z])).*$', empty-fallback: REJECT, url: 'https://www.gstatic.com/generate_204', interval: 600, tolerance: 20, lazy: true}
+  - {name: 'Taiwan', type: url-test, use: [airport], filter: '(?i)^(?!.*(?:流量|到期|剩余|重置|套餐|公告|traffic|expire|reset|quota|balance|(?<![a-z])beta(?![a-z]))).*(?:台湾|台灣|台北|臺北|台中|新北|高雄|彰化|hinet|cht|taiwan|taipei|🇹🇼|(?<![a-z])tw(?![a-z])).*$', empty-fallback: REJECT, url: 'https://www.gstatic.com/generate_204', interval: 600, tolerance: 20, lazy: true}
+  - {name: 'Japan', type: url-test, use: [airport], filter: '(?i)^(?!.*(?:流量|到期|剩余|重置|套餐|公告|traffic|expire|reset|quota|balance|(?<![a-z])beta(?![a-z]))).*(?:日本|东京|東京|大阪|japan|tokyo|osaka|🇯🇵|(?<![a-z])jp(?![a-z])).*$', empty-fallback: REJECT, url: 'https://www.gstatic.com/generate_204', interval: 600, tolerance: 20, lazy: true}
+  - {name: 'Singapore', type: url-test, use: [airport], filter: '(?i)^(?!.*(?:流量|到期|剩余|重置|套餐|公告|traffic|expire|reset|quota|balance|(?<![a-z])beta(?![a-z]))).*(?:新加坡|狮城|獅城|singapore|🇸🇬|(?<![a-z])sg(?![a-z])).*$', empty-fallback: REJECT, url: 'https://www.gstatic.com/generate_204', interval: 600, tolerance: 20, lazy: true}
+  - {name: 'United States', type: url-test, use: [airport], filter: '(?i)^(?!.*(?:流量|到期|剩余|重置|套餐|公告|traffic|expire|reset|quota|balance|(?<![a-z])beta(?![a-z]))).*(?:美国|美國|洛杉矶|洛杉磯|圣何塞|聖荷西|西雅图|西雅圖|纽约|紐約|united[ _-]?states|american?|los[ _-]?angeles|san[ _-]?jose|seattle|new[ _-]?york|🇺🇸|(?<![a-z])us(?![a-z])).*$', empty-fallback: REJECT, url: 'https://www.gstatic.com/generate_204', interval: 600, tolerance: 20, lazy: true}
+  - {name: '广告拦截', type: select, proxies: ['REJECT', 'DIRECT']}
+  - {name: 'OpenAI', type: select, proxies: ['United States', 'Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'DIRECT']}
+  - {name: 'Anthropic', type: select, proxies: ['United States', 'Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'DIRECT']}
+  - {name: 'Gemini', type: select, proxies: ['United States', 'Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'DIRECT']}
+  - {name: 'YouTube', type: select, proxies: ['Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States', 'DIRECT']}
+  - {name: 'Google', type: select, proxies: ['Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States', 'DIRECT']}
+  - {name: 'OneDrive-Web', type: select, proxies: ['Hong Kong', 'Global', 'Taiwan', 'Japan', 'Singapore', 'United States', 'DIRECT']}
+  - {name: 'OneDrive-Sync', type: select, proxies: ['DIRECT', 'Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States']}
+  - {name: 'GitHub', type: select, proxies: ['Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States', 'DIRECT']}
+  - {name: 'Microsoft', type: select, proxies: ['Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States', 'DIRECT']}
+  - {name: 'Spotify', type: select, proxies: ['United States', 'Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'DIRECT']}
+  - {name: 'TikTok', type: select, proxies: ['Singapore', 'Global', 'Hong Kong', 'Taiwan', 'Japan', 'United States', 'DIRECT']}
+  - {name: 'Netflix', type: select, proxies: ['Singapore', 'Global', 'Hong Kong', 'Taiwan', 'Japan', 'United States', 'DIRECT']}
+  - {name: 'Disney', type: select, proxies: ['Singapore', 'Global', 'Hong Kong', 'Taiwan', 'Japan', 'United States', 'DIRECT']}
+  - {name: 'Steam', type: select, proxies: ['Hong Kong', 'Global', 'Taiwan', 'Japan', 'Singapore', 'United States', 'DIRECT']}
+  - {name: 'Telegram', type: select, proxies: ['Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States', 'DIRECT']}
+  - {name: 'X', type: select, proxies: ['Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States', 'DIRECT']}
+  - {name: 'Meta', type: select, proxies: ['Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States', 'DIRECT']}
+  - {name: 'Wiki', type: select, proxies: ['Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States', 'DIRECT']}
+  - {name: 'LinkedIn', type: select, proxies: ['Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States', 'DIRECT']}
+  - {name: '国内服务', type: select, proxies: ['DIRECT', 'Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States']}
+  - {name: 'Apple', type: select, proxies: ['DIRECT', 'Global', 'Hong Kong', 'Taiwan', 'Japan', 'Singapore', 'United States']}
+
+rule-providers:
+  advertising:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/collections/advertising.yaml'
+    path: ./ruleset/clashverge-rules/collections/advertising.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  openai:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/openai.yaml'
+    path: ./ruleset/clashverge-rules/services/openai.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  anthropic:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/anthropic.yaml'
+    path: ./ruleset/clashverge-rules/services/anthropic.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  google-gemini:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/google-gemini.yaml'
+    path: ./ruleset/clashverge-rules/services/google-gemini.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  google-youtube:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/google-youtube.yaml'
+    path: ./ruleset/clashverge-rules/services/google-youtube.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  google-without-youtube:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/collections/google-without-youtube.yaml'
+    path: ./ruleset/clashverge-rules/collections/google-without-youtube.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  microsoft-onedrive-web:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/custom/microsoft-onedrive-web.yaml'
+    path: ./ruleset/clashverge-rules/custom/microsoft-onedrive-web.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  microsoft-onedrive-sync:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/custom/microsoft-onedrive-sync.yaml'
+    path: ./ruleset/clashverge-rules/custom/microsoft-onedrive-sync.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  microsoft-github:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/microsoft-github.yaml'
+    path: ./ruleset/clashverge-rules/services/microsoft-github.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  microsoft:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/microsoft.yaml'
+    path: ./ruleset/clashverge-rules/services/microsoft.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  spotify:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/spotify.yaml'
+    path: ./ruleset/clashverge-rules/services/spotify.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  spotify_keyword:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/spotify_keyword.yaml'
+    path: ./ruleset/clashverge-rules/services/spotify_keyword.yaml
+    interval: 86400
+    proxy: Global
+    behavior: classical
+    format: yaml
+  bytedance-tiktok:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/bytedance-tiktok.yaml'
+    path: ./ruleset/clashverge-rules/services/bytedance-tiktok.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  netflix:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/netflix.yaml'
+    path: ./ruleset/clashverge-rules/services/netflix.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  disney:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/disney.yaml'
+    path: ./ruleset/clashverge-rules/services/disney.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  steam:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/steam.yaml'
+    path: ./ruleset/clashverge-rules/services/steam.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  telegram:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/telegram.yaml'
+    path: ./ruleset/clashverge-rules/services/telegram.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  twitter:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/twitter.yaml'
+    path: ./ruleset/clashverge-rules/services/twitter.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  meta:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/meta.yaml'
+    path: ./ruleset/clashverge-rules/services/meta.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  wikimedia:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/wikimedia.yaml'
+    path: ./ruleset/clashverge-rules/services/wikimedia.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  linkedin:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/linkedin.yaml'
+    path: ./ruleset/clashverge-rules/services/linkedin.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  bilibili:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/bilibili.yaml'
+    path: ./ruleset/clashverge-rules/services/bilibili.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  xiaohongshu:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/xiaohongshu.yaml'
+    path: ./ruleset/clashverge-rules/services/xiaohongshu.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  deepseek:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/deepseek.yaml'
+    path: ./ruleset/clashverge-rules/services/deepseek.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  tencent:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/tencent.yaml'
+    path: ./ruleset/clashverge-rules/services/tencent.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  apple:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/apple.yaml'
+    path: ./ruleset/clashverge-rules/services/apple.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  domestic:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/collections/domestic.yaml'
+    path: ./ruleset/clashverge-rules/collections/domestic.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  global:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/collections/global.yaml'
+    path: ./ruleset/clashverge-rules/collections/global.yaml
+    interval: 86400
+    proxy: Global
+    behavior: domain
+    format: yaml
+  spotify_ip:
+    type: http
+    url: 'https://raw.githubusercontent.com/Steeefanie/ClashVerge-rules/main/rules/services/spotify_ip.yaml'
+    path: ./ruleset/clashverge-rules/services/spotify_ip.yaml
+    interval: 86400
+    proxy: Global
+    behavior: ipcidr
+    format: yaml
+
+rules:
+  # ② 本地域名规则（QX [filter_local]）
+  - 'DOMAIN,ad.12306.cn,DIRECT'
+  - 'DOMAIN,gg.caixin.com,DIRECT'
+  - 'DOMAIN,sdkapp.uve.weibo.com,DIRECT'
+  - 'DOMAIN-SUFFIX,githubusercontent.com,Global'
+  - 'DOMAIN-SUFFIX,github.com,Global'
+  # ③ 域名规则集，按 QX [filter_remote] 顺序（keyword 紧跟所属来源）
+  - 'RULE-SET,advertising,广告拦截'
+  - 'RULE-SET,openai,OpenAI'
+  - 'RULE-SET,anthropic,Anthropic'
+  - 'RULE-SET,google-gemini,Gemini'
+  - 'RULE-SET,google-youtube,YouTube'
+  - 'RULE-SET,google-without-youtube,Google'
+  - 'RULE-SET,microsoft-onedrive-web,OneDrive-Web'
+  - 'RULE-SET,microsoft-onedrive-sync,OneDrive-Sync'
+  - 'RULE-SET,microsoft-github,GitHub'
+  - 'RULE-SET,microsoft,Microsoft'
+  - 'RULE-SET,spotify,Spotify'
+  - 'RULE-SET,spotify_keyword,Spotify'
+  - 'RULE-SET,bytedance-tiktok,TikTok'
+  - 'RULE-SET,netflix,Netflix'
+  - 'RULE-SET,disney,Disney'
+  - 'RULE-SET,steam,Steam'
+  - 'RULE-SET,telegram,Telegram'
+  - 'RULE-SET,twitter,X'
+  - 'RULE-SET,meta,Meta'
+  - 'RULE-SET,wikimedia,Wiki'
+  - 'RULE-SET,linkedin,LinkedIn'
+  - 'RULE-SET,bilibili,国内服务'
+  - 'RULE-SET,xiaohongshu,国内服务'
+  - 'RULE-SET,deepseek,国内服务'
+  - 'RULE-SET,tencent,国内服务'
+  - 'RULE-SET,apple,Apple'
+  - 'RULE-SET,domestic,DIRECT'
+  - 'RULE-SET,global,Global'
+  # ④ 本地 IP 规则与 GeoIP（放在全部域名规则之后；这一层会触发 DNS 解析）
+  - 'IP-CIDR,180.76.76.200/32,REJECT'
+  - 'IP-CIDR,203.107.1.1/24,REJECT'
+  - 'IP-CIDR,10.0.0.0/8,DIRECT'
+  - 'IP-CIDR,127.0.0.0/8,DIRECT'
+  - 'IP-CIDR,169.254.0.0/16,DIRECT'
+  - 'IP-CIDR,172.16.0.0/12,DIRECT'
+  - 'IP-CIDR,192.168.0.0/16,DIRECT'
+  - 'IP-CIDR,224.0.0.0/24,DIRECT'
+  - 'IP-CIDR,182.254.116.0/24,DIRECT'
+  - 'IP-CIDR6,::1/128,DIRECT'
+  - 'IP-CIDR6,fc00::/7,DIRECT'
+  - 'IP-CIDR6,fe80::/10,DIRECT'
+  - 'GEOIP,CN,DIRECT'
+  # ⑤ 规则集中的 IP 条件
+  - 'RULE-SET,spotify_ip,Spotify'
+  # ⑥ 兜底
+  - 'MATCH,Global'

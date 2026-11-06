@@ -1,0 +1,98 @@
+{
+  "_comment": "上游快照锁文件，由 tools/build.py --import-from 生成；文件内容取自 commit 对应的 Git 对象。",
+  "repo": "https://github.com/Steeefanie/QuantumultX-resources",
+  "commit": "33b22e9fc24fd84ea04059e5aa7f61fba4cfbf18",
+  "commit_date": "2026-11-06T11:25:59+08:00",
+  "files": {
+    "LICENSE": {
+      "sha256": "b9d84a22870d3f21c91a4c6e410c9cc51d00902f5233ad0c84011479244bf7d2"
+    },
+    "examples/quantumult_steeefanie.conf": {
+      "sha256": "ac4536089eb01ef06f5faa79756a9ab058cf3c53eea65714fa6beab3530c4fa6"
+    },
+    "filter/collections/advertising.list": {
+      "sha256": "700004d888021b685b8f0643780a1e2602d1895f3b3a314df27025850c20095e"
+    },
+    "filter/collections/domestic.list": {
+      "sha256": "51479470acb739a7155d477ad7816924a037a751a6cb595006bf75594c9519da"
+    },
+    "filter/collections/global.list": {
+      "sha256": "7eb113f188738d7adc4c3b326764d0457bae4276af2d0a0909f4e61ac55e64b9"
+    },
+    "filter/collections/google-without-youtube.list": {
+      "sha256": "e56840386c384dfa8ef28f37b804d34d5263d54ceb1f5e8b4e5daef41e44ee7f"
+    },
+    "filter/custom/microsoft-onedrive-sync.list": {
+      "sha256": "2f33d8c527f6f499b1c3e920f07bee41eb0cfa22e3b21c5eddda83c331ca94c9"
+    },
+    "filter/custom/microsoft-onedrive-web.list": {
+      "sha256": "177d3cd8ba510eeead65aa5ab6c1c2c63657cb683367aa108123ddbce589f9ff"
+    },
+    "filter/services/anthropic.list": {
+      "sha256": "b4c949168a83ddf9f9b2f0bfb75b0083be915a8ec10edc6c57ef77c291647881"
+    },
+    "filter/services/apple.list": {
+      "sha256": "b17fc5783adb18bd2b8b87ba0e21ea42a2f9c50c14deaa5cec891a7243c58a0f"
+    },
+    "filter/services/bilibili.list": {
+      "sha256": "b46943555371ffa30ae2dca758a38d6f716d1b3d2531a2e684d41e2ac3e54c51"
+    },
+    "filter/services/bytedance-tiktok.list": {
+      "sha256": "cded841fdee0313429156e2676efd5b4084faba9a02d71030e324622ec638896"
+    },
+    "filter/services/deepseek.list": {
+      "sha256": "0c2e38388bc6455b389b6015ca49b9a4c8248e188b07f42b5ad8cd353520e794"
+    },
+    "filter/services/disney.list": {
+      "sha256": "635b31355dd2e3ac490c567f4e08c5ed112c6a1ba31156add4f9787c6c15f429"
+    },
+    "filter/services/google-gemini.list": {
+      "sha256": "c21bf86bd14b95650ac5114bbb7446295c2a48b3ad222fa87369b855da892cf4"
+    },
+    "filter/services/google-youtube.list": {
+      "sha256": "1f6948d4a376e2bf29cb732fe4075e29217a38d08b03edb0ea0a2d6f955af856"
+    },
+    "filter/services/linkedin.list": {
+      "sha256": "adcc305c4f96b31e3dafe5423ff96c1a34b1a54cccb29b5a1c4e682c40897242"
+    },
+    "filter/services/meta.list": {
+      "sha256": "2ad613bfa0a7154ae80cb6342b7f93990f2b5b30a2e43b55900a21b167b0cd8b"
+    },
+    "filter/services/microsoft-github.list": {
+      "sha256": "7d6df898a2c1e0d27a75202615bcac1c97ac47d864ded6ea52aff18179a42b3b"
+    },
+    "filter/services/microsoft.list": {
+      "sha256": "aac20ce154a203560386973b2295f9002aa1bfc33c2bd9ec39f58f85cb75ebb3"
+    },
+    "filter/services/netflix.list": {
+      "sha256": "ff96fed2bb6dd2c0deeff7bfd4a97a1caca597a7ef45337bf290cc7ec3e771de"
+    },
+    "filter/services/openai.list": {
+      "sha256": "eef9f1ca2568e424713e41061cb0b3c85fca4829c6d9ee5cc39bdcf4225cceb0"
+    },
+    "filter/services/spotify.list": {
+      "sha256": "b9c5cae5913b24928905d84d429afe6190180ef4121e5c2f7ea264d9e9694a59"
+    },
+    "filter/services/steam.list": {
+      "sha256": "2ad035143cae86e6bd3347240e37d812e434fdb63e708f39c0d7c126f743197c"
+    },
+    "filter/services/telegram.list": {
+      "sha256": "3153a5f5424e9421ec97fa7a480241cdad60f553ab80afbc043c8f40c12983aa"
+    },
+    "filter/services/tencent.list": {
+      "sha256": "ffc2b5c97acddfa791898e91ee9af2379606812d169e5045b4d497ba807026f1"
+    },
+    "filter/services/twitter.list": {
+      "sha256": "7fdf2663582da18854e1f85f82ada72166e404cb27cbed9de5c12b26dd854a5e"
+    },
+    "filter/services/wikimedia.list": {
+      "sha256": "5de75dbb51d0a0370e9a98914bf8203f6c44fd510bd299b3d382dde07384914a"
+    },
+    "filter/services/xiaohongshu.list": {
+      "sha256": "87422715b151d75254c4fd3a41f8bc6a0240bdd8c33ed836272346db6fe72ae3"
+    },
+    "sources/v2fly/LICENSE": {
+      "sha256": "b9d84a22870d3f21c91a4c6e410c9cc51d00902f5233ad0c84011479244bf7d2"
+    }
+  }
+}

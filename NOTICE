@@ -1,0 +1,22 @@
+ClashVerge-rules 第三方来源说明
+================================
+
+1. Steeefanie/QuantumultX-resources
+   https://github.com/Steeefanie/QuantumultX-resources
+   本仓库规则数据的直接来源；固定提交与文件哈希见 sources/upstream.lock.json。
+   上游许可原文：sources/qx/LICENSE（MIT）。
+
+2. v2fly/domain-list-community
+   https://github.com/v2fly/domain-list-community
+   上游分流规则的原始数据来源（QuantumultX-resources 据此转换）。
+   许可：MIT，原文见 sources/qx/sources/v2fly/LICENSE。
+
+3. 上游自维护规则
+   filter/custom/microsoft-onedrive-web.list、filter/custom/microsoft-onedrive-sync.list，
+   以及 google-gemini.list 中的本地补充条目（上游 sources/local-additions.json），
+   随上游仓库许可发布。
+
+未发布内容
+----------
+上游 filter/adblock/combined.list 同时包含 app2smile/rules（MIT）与
+fmz200/wool_scripts（GPL-3.0）派生的条目，本仓库暂不收录、不分发，待逐一核对来源许可后再决定。

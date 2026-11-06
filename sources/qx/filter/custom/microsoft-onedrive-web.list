@@ -1,0 +1,19 @@
+# 名称：OneDrive 网页与登录
+# 本地整理日期：2026-11-04；正文沿用用户此前的本地规则。
+# 来源原文：sources/local/onedrive-web.snippet；不冒充 V2Fly 社区规则。
+# 边界：按目标域名划分，无法保证区分网页与同步客户端；两份规则存在交叉。
+# 使用：Web 条目优先于 Sync；force-policy 决定实际策略。共享登录和租户域名可能影响其他 Microsoft 服务。
+# 用户既有规则的候选整理副本；2026-10-19
+# 原文件：onedrive_web_filter.snippet；未修改iCloud原文件
+# 去向由主配置 force-policy 指定；仅保留域名条件
+host, onedrive.com, proxy
+host, www.onedrive.com, proxy
+host, onedrive.live.com, proxy
+host, onedrive.office365.com, proxy
+host, login.live.com, proxy
+host, oauth.live.com, proxy
+host, account.live.com, proxy
+host, login.microsoftonline.com, proxy
+host, login.windows.net, proxy
+host, g.live.com, proxy
+host-suffix, officeapps.live.com, proxy

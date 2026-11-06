@@ -1,0 +1,33 @@
+# 名称：OneDrive 同步与存储
+# 本地整理日期：2026-11-04；正文沿用用户此前的本地规则。
+# 来源原文：sources/local/onedrive-sync.snippet；不冒充 V2Fly 社区规则。
+# 边界：按目标域名划分，无法保证区分网页与同步客户端；两份规则存在交叉。
+# 使用：Web 条目优先于 Sync；force-policy 决定实际策略。共享登录和租户域名可能影响其他 Microsoft 服务。
+# 用户既有规则的候选整理副本；2026-10-19
+# 原文件：onedrive_sync_filter.snippet；未修改iCloud原文件
+# 去向由主配置 force-policy 指定；仅保留域名条件
+host-suffix, onedrive.live.com, proxy
+host-suffix, onedrive.com, proxy
+host-suffix, files.1drv.com, proxy
+host-suffix, storage.live.com, proxy
+host-suffix, livefilestore.com, proxy
+host-suffix, docs.live.net, proxy
+host-suffix, policies.live.net, proxy
+host-suffix, groups.office.live.com, proxy
+host-suffix, groups.photos.live.com, proxy
+host-suffix, groups.skydrive.live.com, proxy
+host-suffix, storage.msn.com, proxy
+host-suffix, sharepoint.com, proxy
+host-suffix, sharepointonline.com, proxy
+host, api.live.net, proxy
+host, apis.live.net, proxy
+host, api.onedrive.com, proxy
+host, favorites.live.com, proxy
+host, photos.live.com, proxy
+host, skydrive.live.com, proxy
+host, settings.live.net, proxy
+host, skyapi.live.net, proxy
+host, snapi.live.net, proxy
+host, p.sfx.ms, proxy
+host, oneclient.sfx.ms, proxy
+host, spoprod-a.akamaihd.net, proxy
